@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from 'react-router'
+import Header from 'components/HomeHeader'
 
 export default class App extends React.Component {
     constructor(props, context) {
@@ -9,7 +10,7 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>Home World</h1>
+                <Header />
             </div>
         )
     }

@@ -10,8 +10,21 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Not Found What You Are Seeing</h1>
+            <div className="header-container clear-fix">
+                <div className="header-left float-left">
+                    <span>{this.props.cityName || '北京'}</span>
+                    &nbsp;
+                    <i className="icon-angle-down"></i>
+                </div>
+                <div className="header-right float-right">
+                    <i className="icon-user"></i>
+                </div>
+                <div className="header-middle">
+                    <div className="search-container">
+                        <i className="icon-search"></i>
+                        <input type="text" placeholder="请输入关键字"/>
+                    </div>
+                </div>
             </div>
         )
     }
