@@ -59,7 +59,8 @@ const config = {
             '__redux': path.resolve(__dirname, 'src/redux'),
             'config': path.resolve(__dirname, 'src/config'),
             'router': path.resolve(__dirname, 'src/router'),
-            'util': path.resolve(__dirname, 'src/util')
+            'util': path.resolve(__dirname, 'src/util'),
+            'static': path.resolve(__dirname, 'src/static')
         }
     },
     module:{
@@ -130,7 +131,7 @@ const config = {
         HtmlWebpackPluginConfig,
         ExtractTextPluginConfig,
         DefinePlugin,
-        OpenBrowserPluginConfig,
+        // OpenBrowserPluginConfig,
         // WebpackMonitorConfig
     ],
     devtool: 'source-map'

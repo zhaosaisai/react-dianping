@@ -1,6 +1,8 @@
 import React from 'react'
 import { render } from 'react-router'
 
+import './style.scss'
+
 export default class App extends React.Component {
     constructor(props, context) {
         super(props, context)
@@ -9,7 +11,7 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>Home World</h1>
+                <h1>Not Found What You Are Seeing</h1>
             </div>
         )
     }

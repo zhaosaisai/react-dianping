@@ -26,8 +26,7 @@ export default class App extends React.Component {
 
     componentDidMount() {
         let cityName = LocalStorage.getItem(CITY_NAME) || '北京'
-        let { dispatchActions } = this.props
-        dispatchActions.userInfoUpdate({
+        this.props.dispatchActions.userInfoUpdate({
             cityName
         })
         // init done
