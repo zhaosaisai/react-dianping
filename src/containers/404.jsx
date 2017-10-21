@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-router'
 
-export default class App extends React.Component {
+export default class NotFound extends React.Component {
     constructor(props, context) {
         super(props, context)
     }

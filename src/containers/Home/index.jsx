@@ -1,8 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { render } from 'react-router'
+import { connect } from 'react-redux'
 import Header from 'components/HomeHeader'
+import Category from 'components/Category'
 
-export default class App extends React.Component {
+const mapStateToProps = (state)  => ({
+    userInfo: state.userInfo
+})
+
+@connect(mapStateToProps, null)
+export default class Home extends React.Component {
+    static propTypes = {
+        userInfo: PropTypes.object
+    }
+
     constructor(props, context) {
         super(props, context)
     }
@@ -10,7 +22,8 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header cityName={this.props.userInfo.cityName}/>
+                <Category />
             </div>
         )
     }

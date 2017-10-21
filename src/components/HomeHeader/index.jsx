@@ -3,7 +3,7 @@ import { render } from 'react-router'
 
 import './style.scss'
 
-export default class App extends React.Component {
+export default class HomeHeader extends React.Component {
     constructor(props, context) {
         super(props, context)
     }
@@ -12,7 +12,7 @@ export default class App extends React.Component {
         return (
             <div className="header-container clear-fix">
                 <div className="header-left float-left">
-                    <span>{this.props.cityName || '北京'}</span>
+                    <span>{this.props.cityName}</span>
                     &nbsp;
                     <i className="icon-angle-down"></i>
                 </div>
