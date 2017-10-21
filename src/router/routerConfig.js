@@ -11,15 +11,17 @@ import User from 'containers/User'
 import NotFound from 'containers/404'
 
 // set route
-export const getRoute = (hashType) => (
-    <Router history={hashType}>
-        <Route path="/" component={App}>
-            <IndexRoute component={Home}/>
-            <Route path="/city" component={City}/>
-            <Route path="/detail/:id" component={Detail}/>
-            <Route path="/user" component={User}/>
-            <Route path="/search/:type(/:keyword)" component={Search}/>
-            <Route path="*" component={NotFound}/>
-        </Route>
-    </Router>
-)
+export const getRoute = (hashType) => {
+    return (
+        <Router history={hashType}>
+            <Route path="/" component={App}>
+                <IndexRoute component={Home}/>
+                <Route path="/city" component={City}/>
+                <Route path="/detail/:id" component={Detail}/>
+                <Route path="/user" component={User}/>
+                <Route path="/search/:type(/:keyword)" component={Search}/>
+                <Route path="*" component={NotFound}/>
+            </Route>
+        </Router>
+    )
+} 

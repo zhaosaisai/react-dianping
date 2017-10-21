@@ -58,7 +58,8 @@ const config = {
             'containers': path.resolve(__dirname, 'src/containers'),
             '__redux': path.resolve(__dirname, 'src/redux'),
             'config': path.resolve(__dirname, 'src/config'),
-            'router': path.resolve(__dirname, 'src/router')
+            'router': path.resolve(__dirname, 'src/router'),
+            'util': path.resolve(__dirname, 'src/util')
         }
     },
     module:{
