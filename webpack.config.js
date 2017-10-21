@@ -54,9 +54,11 @@ const config = {
     resolve: {
         extensions: [ '*', '.js', '.jsx'],
         alias: {
-            Utils: path.resolve(__dirname, 'src/utils'),
-            Components: path.resolve(__dirname, 'src/components'),
-            Src: path.resolve(__dirname, 'src')
+            'components': path.resolve(__dirname, 'src/components'),
+            'containers': path.resolve(__dirname, 'src/containers'),
+            '__redux': path.resolve(__dirname, 'src/redux'),
+            'config': path.resolve(__dirname, 'src/config'),
+            'router': path.resolve(__dirname, 'src/router')
         }
     },
     module:{
