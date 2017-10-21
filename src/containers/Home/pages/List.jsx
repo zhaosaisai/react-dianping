@@ -1,21 +1,23 @@
 import React from 'react'
 import axios from 'axios'
-import HomeAd from 'components/HomeAd'
+import HomeList from 'components/List'
 
-export default class Ad extends React.Component {
+export default class List extends React.Component {
     constructor(props, context) {
         super(props, context)
         this.state = {
-            result: []
+            result: [],
+            hasMore: false
         }
     }
 
-    async getAdData() {
+    async getList(city, index) {
         try{
-            let result = await axios.get('/api/ads')
+            let result = await axios.get(`/api/list/${city}/${index}`)
             if(result && result['status'] == 200) {
                 this.setState({
-                    result: result['data']
+                    result: result['data']['data'],
+                    hasMore: result['data']['hasMore']
                 })
             }
         }catch(ex) {
@@ -24,7 +26,7 @@ export default class Ad extends React.Component {
     }
 
     componentDidMount() {
-        this.getAdData()
+        this.getList(this.props.cityName, 0)
     }
 
     render() {
@@ -32,7 +34,7 @@ export default class Ad extends React.Component {
             <div>
                 {
                     this.state.result.length ? 
-                    <HomeAd result={this.state.result} /> :
+                    <HomeList result={this.state.result} /> :
                     null
                 }
             </div>
