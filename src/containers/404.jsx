@@ -1,5 +1,4 @@
 import React from 'react'
-import { render } from 'react-router'
 
 export default class NotFound extends React.Component {
     constructor(props, context) {

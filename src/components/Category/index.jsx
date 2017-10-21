@@ -1,5 +1,4 @@
 import React from 'react'
-import { render } from 'react-router'
 import cx from 'classnames'
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';

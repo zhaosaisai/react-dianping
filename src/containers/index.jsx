@@ -1,5 +1,4 @@
 import React from 'react'
-import { render } from 'react-router'
 import LocalStorage from 'util/localStorage'
 import { CITY_NAME } from 'config/localStorageKeys'
 import { bindActionCreators } from 'redux'
