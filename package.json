@@ -47,6 +47,7 @@
     "remove:build": "rm -rf ./build",
     "clean:build": "yarn run remove:build && mkdir build",
     "build": "yarn run remove:build && NODE_ENV=production ./node_modules/.bin/webpack --progress --colors",
-    "production": "yarn run build && cd build && python -m SimpleHTTPServer"
+    "production": "yarn run build && cd build && python -m SimpleHTTPServer",
+    "tree": "tree -I 'vedio|node_modules|.git|.vscode|docs' ./"
   }
 }
