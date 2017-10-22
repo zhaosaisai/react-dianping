@@ -36,18 +36,13 @@ export default class HomeHeader extends React.Component {
                     </Link>
                 </div>
                 <div className="header-right float-right">
-                    <i className="icon-user"></i>
+                    <Link to="/login">
+                        <i className="icon-user"></i>
+                    </Link>
                 </div>
                 <div className="header-middle">
                     <div className="search-container">
                         <i className="icon-search"></i>
-                        {/* <input 
-                            type="text" 
-                            placeholder="请输入关键字"
-                            value={this.state.keywords}
-                            onChange={this.onChange.bind(this)}
-                            onKeyDown={this.onKeyDown.bind(this)}
-                        /> */}
                         <SearchHeader 
                             placeholder="请输入关键字"
                             className="search"

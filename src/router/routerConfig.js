@@ -8,6 +8,7 @@ import City from 'containers/City'
 import Detail from 'containers/Detail'
 import Search from 'containers/Search'
 import User from 'containers/User'
+import Login from 'containers/Login'
 import NotFound from 'containers/404'
 
 // set route
@@ -19,6 +20,7 @@ export const getRoute = (hashType) => {
                 <Route path="/city" component={City}/>
                 <Route path="/detail/:id" component={Detail}/>
                 <Route path="/user" component={User}/>
+                <Route path="/login(/:toWhere(/:other))" component={Login}/>
                 <Route path="/search/:type(/:keyword)" component={Search}/>
                 <Route path="*" component={NotFound}/>
             </Route>
