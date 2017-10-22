@@ -1,6 +1,8 @@
 import React from 'react'
+import DetailHeader from 'components/CityHeader'
+import DetailInfo from './pages/Info'
 
-export default class App extends React.Component {
+export default class Detail extends React.Component {
     constructor(props, context) {
         super(props, context)
     }
@@ -8,7 +10,8 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>Detail</h1>
+                <DetailHeader title="商品详情"/>
+                <DetailInfo id={this.props.params.id}/>
             </div>
         )
     }
