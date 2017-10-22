@@ -30,7 +30,7 @@ router.get('/api/detail/:id', async function (ctx) {
     ctx.body = require('./mock/detailinfo')
 })
 
-router.get('/api/detail/comment/:page/:id', async function(ctx) {
+router.get('/api/detail/comment/:id/:page', async function(ctx) {
     console.log(ctx.params.page, ctx.params.id)
     ctx.body = require('./mock/comment')
 })

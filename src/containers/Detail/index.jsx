@@ -1,6 +1,7 @@
 import React from 'react'
 import DetailHeader from 'components/CityHeader'
 import DetailInfo from './pages/Info'
+import Comment from './pages/Comment'
 
 export default class Detail extends React.Component {
     constructor(props, context) {
@@ -8,10 +9,12 @@ export default class Detail extends React.Component {
     }
 
     render() {
+        const { id } = this.props.params
         return (
             <div>
                 <DetailHeader title="商品详情"/>
-                <DetailInfo id={this.props.params.id}/>
+                <DetailInfo id={id}/>
+                <Comment id={id} />
             </div>
         )
     }

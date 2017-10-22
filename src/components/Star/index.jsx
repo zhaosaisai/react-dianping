@@ -6,7 +6,7 @@ export default class Star extends React.Component {
         super(props, context)
     }
     render() {
-        let star = (this.props.star || 0) % 5
+        let star = (this.props.star || 0) > 5 ? this.props.star % 5 : this.props.star
 
         return (
             <div className="star-container">
