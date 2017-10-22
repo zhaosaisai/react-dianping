@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-router'
+import { Link } from 'react-router'
 
 import './style.scss'
 
@@ -12,9 +12,11 @@ export default class HomeHeader extends React.Component {
         return (
             <div className="header-container clear-fix">
                 <div className="header-left float-left">
-                    <span>{this.props.cityName}</span>
-                    &nbsp;
-                    <i className="icon-angle-down"></i>
+                    <Link to="/city">
+                        <span>{this.props.cityName}</span>
+                        &nbsp;
+                        <i className="icon-angle-down"></i>
+                    </Link>
                 </div>
                 <div className="header-right float-right">
                     <i className="icon-user"></i>
