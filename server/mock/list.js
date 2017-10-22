@@ -7,7 +7,8 @@ module.exports = {
             price: '28',
             distance: '120m',
             mumber: '389',
-            name: 'hanbao'
+            name: 'hanbao',
+            id: 0
         },
         {
             title: '北京开源饭店',
@@ -15,7 +16,8 @@ module.exports = {
             price: '98',
             distance: '140m',
             mumber: '689',
-            name: 'zizhu'
+            name: 'zizhu',
+            id: 1
         },
         {
             title: '服装定制',
@@ -23,7 +25,8 @@ module.exports = {
             price: '1980',
             distance: '160',
             mumber: '106',
-            name: 'cloth'
+            name: 'cloth',
+            id: 2
         },
         {
             title: '婚纱摄影',
@@ -31,7 +34,8 @@ module.exports = {
             price: '2899',
             distance: '160',
             mumber: '58',
-            name: 'marry'
+            name: 'marry',
+            id: 3
         },
         {
             title: '麻辣串串烧',
@@ -39,7 +43,8 @@ module.exports = {
             price: '0',
             distance: '160',
             mumber: '1426',
-            name: 'chuanchuan'
+            name: 'chuanchuan',
+            id: 4
         }
     ]
 }

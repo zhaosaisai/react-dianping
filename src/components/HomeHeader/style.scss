@@ -17,12 +17,19 @@
             border-radius: 99px;
             overflow: hidden;
             padding: 5px;
+            position: relative;
             i {
                 color: #ccc !important;
             }
-            input {
+            input.search {
                 font-size: 14px !important;
                 font-weight: normal;
+                position: absolute;
+                box-sizing: border-box;
+                width: calc(100%-30px);
+                height: 100%;
+                top: 0;
+                left: 30px;
             }
         }
     }

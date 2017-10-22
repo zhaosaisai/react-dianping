@@ -1,5 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
+import { Link } from 'react-router'
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import category from './category'
@@ -9,14 +10,15 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const SwiperItem = (props) => {
     return (
-        <li 
-            key={props.item.icon}
-            className='float-left' 
-            style={{
-            'backgroundImage': `url(${require(`./icon/${props.item.icon}.png`)})`
-        }}>
-            {props.item.text}
-        </li>
+        <Link key={props.item.icon} to={`/search/${props.item.icon}`}>
+            <li 
+                className='float-left' 
+                style={{
+                'backgroundImage': `url(${require(`./icon/${props.item.icon}.png`)})`
+            }}>
+                {props.item.text}
+            </li>
+        </Link>
     )
 }
 

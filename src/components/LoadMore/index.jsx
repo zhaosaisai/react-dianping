@@ -1,7 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './style.scss'
 
 export default class LoadMore extends React.Component {
+    static propTypes = {
+        loadType: PropTypes.string
+    }
+
+    static defaultProps = {
+        loadType: 'scroll'
+    }
+
     constructor(props, context) {
         super(props, context)
         this.timerId = null
@@ -13,7 +22,7 @@ export default class LoadMore extends React.Component {
         if(this.props.loadType != 'scroll') {
             return
         }
-
+        
         window.addEventListener('scroll', () => {
             if (isLoadingMore) {
                 return
@@ -21,19 +30,20 @@ export default class LoadMore extends React.Component {
             if(this.timerId) {
                 clearTimeout(this.timerId)
             }
-            this.timerId = setTimeout(this.scrollFun.bind(this), 50)
+            this.timerId = setTimeout(this.scrollFun.bind(this), 150)
         }, false)
     }
 
-    componentWillUnMount() {
+    componentWillUnmount() {
         clearTimeout(this.timerId)
         window.removeEventListener('scroll', this.scrollFun, false)
     }
 
     scrollFun() {
-        const top = this.wrapper.getBoundingClientRect().top
+        if(!this.wrapper) return
+        const top = this.wrapper.getBoundingClientRect().top 
         const windowHeight = window.screen.height
-        if(top && top <= windowHeight) {
+        if(top && top < windowHeight) {
             this.props.loadingMoreFn()
         }
     }

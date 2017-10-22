@@ -1,11 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link, hashHistory } from 'react-router'
+import SearchHeader from 'components/SearchInput'
 
 import './style.scss'
 
 export default class HomeHeader extends React.Component {
     constructor(props, context) {
         super(props, context)
+        this.state = {
+            keywords: ''
+        }
+    }
+
+    onChange(e) {
+        const value = e.target.value.trim()
+        this.setState({
+            keywords: value
+        })
+    }
+
+    onKeyDown(e) {
+        if(e.keyCode == 13) {
+            hashHistory.push(`/search/all/${e.target.value}`)
+        }
     }
 
     render() {
@@ -24,7 +41,18 @@ export default class HomeHeader extends React.Component {
                 <div className="header-middle">
                     <div className="search-container">
                         <i className="icon-search"></i>
-                        <input type="text" placeholder="请输入关键字"/>
+                        {/* <input 
+                            type="text" 
+                            placeholder="请输入关键字"
+                            value={this.state.keywords}
+                            onChange={this.onChange.bind(this)}
+                            onKeyDown={this.onKeyDown.bind(this)}
+                        /> */}
+                        <SearchHeader 
+                            placeholder="请输入关键字"
+                            className="search"
+                            onKeyDown={this.onKeyDown.bind(this)}
+                            />
                     </div>
                 </div>
             </div>

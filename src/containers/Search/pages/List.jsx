@@ -1,23 +1,25 @@
 import React from 'react'
 import axios from 'axios'
-import HomeList from 'components/List'
+import SearchList from 'components/List'
 import LoadMore from 'components/LoadMore'
+
+const initState = {
+    result: [],
+    hasMore: false,
+    isLoadingMore: false,
+    page: 0,
+    loadType: 'scroll' // scroll or click
+}
 
 export default class List extends React.Component {
     constructor(props, context) {
         super(props, context)
-        this.state = {
-            result: [],
-            hasMore: false,
-            isLoadingMore: false,
-            page: 0,
-            loadType: 'scroll' // scroll or click
-        }
+        this.state = initState
     }
 
-    async getList(city, page) {
+    async getList(city,type, keyword, page) {
         try{
-            let result = await axios.get(`/api/list/${city}/${page}`)
+            let result = await axios.get(`/api/list/${city}/${type}/${keyword || 'all'}/${page}`)
             if(result && result['status'] == 200) {
                 this.setState((prevState) => {
                     return {
@@ -38,20 +40,30 @@ export default class List extends React.Component {
         this.setState({
             isLoadingMore: true
         })
-        this.getList(this.props.cityName, this.state.page)
+        this.getList(this.props.cityName, this.props.type, this.props.keyword, this.state.page)
     }
 
     componentDidMount() {
-        this.getList(this.props.cityName, this.state.page)
+        this.getList(this.props.cityName, this.props.type, this.props.keyword, this.state.page)
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevProps.keyword === this.props.keyword && prevProps.type === this.props.type) {
+            return false;
+        }
+
+        this.setState(initState)
+
+        // load first data
+        this.getList(this.props.cityName, this.props.type, this.props.keyword, this.state.page)
     }
 
     render() {
         return (
             <div>
-                <h2 className="title">猜你喜欢</h2>
                 {
                     this.state.result.length ? 
-                    <HomeList result={this.state.result} /> :
+                    <SearchList result={this.state.result} /> :
                     null
                 }
                 {
