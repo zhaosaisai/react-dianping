@@ -1,4 +1,5 @@
 import React from 'react'
+import { hashHistory } from 'react-router'
 import './style.scss'
 
 export default class CityHeader extends React.Component {
@@ -10,7 +11,12 @@ export default class CityHeader extends React.Component {
         return (
             <div className="common-header">
                 <span className="back-icon" onClick={() => {
-                    window.history.back()
+                    let router = this.props.router
+                    if(router) {
+                        hashHistory.push(router)
+                    } else {
+                        window.history.back()
+                    }
                 }}>
                     <i className="icon-chevron-left"></i>
                 </span>

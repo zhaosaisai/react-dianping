@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f1f1f1;
-    min-width: 330px;
+    // min-width: 330px;
 }
 
 input {
@@ -46,4 +46,7 @@ h2.title {
 }
 .list-item{
     background-color: #fff;
+}
+a,button,input[type="button"],textarea {
+    outline: none;
 }
