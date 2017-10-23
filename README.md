@@ -3,10 +3,10 @@
 
 ## DEMO
 
-<div style="display:inline-block;">![](http://ww1.sinaimg.cn/large/006FmM8yly1fksjbjew93j30860f8goi.jpg)</div>
-<div style="display:inline-block;">![](http://ww1.sinaimg.cn/large/006FmM8yly1fksjbwjz1ij308o0f7t91.jpg)</div>
-<div style="display:inline-block;">![](http://ww1.sinaimg.cn/large/006FmM8yly1fksjc6p51sj308k0fc0sx.jpg)</div>
-<div style="display:inline-block;">![](http://ww1.sinaimg.cn/large/006FmM8yly1fksjchb14hj308h0f540s.jpg)</div>
+![](https://github.com/2json/react-dianping/blob/master/resources/d1.png)    ![](https://github.com/2json/react-dianping/blob/master/resources/d2.png)
+
+![](https://github.com/2json/react-dianping/blob/master/resources/d3.png)
+![](https://github.com/2json/react-dianping/blob/master/resources/d4.png)
 
 ## ENVIRONMENT
 
